@@ -1,0 +1,14 @@
+<body>
+
+
+<form action="/edit">
+  <span>Task Name:</span>
+  <input #name type="text" name="task_name" value={{editTask.name}} [(ngModel)] ="editTask.name" /><br/>
+
+  <span>Description:</span>
+  <input #description type="text" name="description" value={{editTask.description}} [(ngModel)] ="editTask.description" /><br/>
+
+  <input type="submit" value="save" (click)="edit(name.value,description.value)"/>
+</form>
+
+</body>

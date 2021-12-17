@@ -1,0 +1,5 @@
+用route去跳轉業面
+
+tasklist和taskcomponent都要分別寫html
+
+spring要連到到local:4020，angular要連到local:8080
