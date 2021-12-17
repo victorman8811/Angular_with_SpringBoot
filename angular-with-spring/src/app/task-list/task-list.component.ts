@@ -30,8 +30,9 @@ export class TaskListComponent implements OnInit {
 
   findAll(){
     this.taskTableService.findAll()
-            .subscribe(taskList =>
-              this.taskList = taskList);
+            .subscribe(taskList =>{
+              console.log(taskList);
+              this.taskList = taskList});
   }
 
   delete(seq: number){
@@ -49,7 +50,7 @@ export class TaskListComponent implements OnInit {
     this.isEdit = true;
     this.deleteControll = "disabled";
     this.editControll = "disabled";
-
+    console.log(this.editTask);
 
   }
 
@@ -60,9 +61,17 @@ export class TaskListComponent implements OnInit {
         input.name = name;
         input.description = description;*/
 
-        this.taskTableService.add({name,description} as TaskTable)
+        this.taskTableService.add({taskName:name,description: description} as TaskTable)
                         .subscribe(taskList =>this.taskList = taskList);
 
     }
+
+  submit(value: boolean){
+
+    this.isEdit = false;
+    this.deleteControll = "";
+    this.editControll = "";
+
+  }
 
 }

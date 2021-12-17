@@ -1,14 +1,14 @@
 <body>
 
 
-<form action="/edit">
+<form action="/edit" *ngIf="editTask">
   <span>Task Name:</span>
-  <input #name type="text" name="task_name" value={{editTask.name}} [(ngModel)] ="editTask.name" /><br/>
+  <input #name type="text" name="task_name"  [(ngModel)] ="editTask.taskName" /><br/>
 
   <span>Description:</span>
-  <input #description type="text" name="description" value={{editTask.description}} [(ngModel)] ="editTask.description" /><br/>
+  <input #description type="text" name="description" [(ngModel)] ="editTask.description" /><br/>
 
-  <input type="submit" value="save" (click)="edit(name.value,description.value)"/>
+  <input type="submit" value="save" (click)="edit()"/>
 </form>
 
 </body>

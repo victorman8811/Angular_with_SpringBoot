@@ -2,7 +2,7 @@
 
 <h1>Edit Task</h1>
 
-<app-task-edit *ngIf="isEdit" [editTask]="editTask"  [taskList]="taskList"></app-task-edit>
+<app-task-edit *ngIf="isEdit"  [editTask]="editTask"  [taskList]="taskList" (isAdd)="submit($event)"></app-task-edit>
 
 <div *ngIf="!isEdit">
   <form action="/add">
@@ -30,10 +30,10 @@
 
 
   <tr class="taskList" *ngFor="let task of taskList">
-    <td>{{task.seq}}</td>
-    <td>{{task.name}}</td>
+    <td>{{task.taskSeq}}</td>
+    <td>{{task.taskName}}</td>
     <td>{{task.description}}</td>
-    <td><input type="button" value="Delete" disabled={{deleteControll}} (click)="delete(task.seq)"></td>
+    <td><input type="button" value="Delete" disabled={{deleteControll}} (click)="delete(task.taskSeq)"></td>
     <td><input type="button" value="Edit" disabled={{editControll}} (click)="edit(task)"></td>
   </tr>
 

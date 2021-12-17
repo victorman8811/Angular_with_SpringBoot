@@ -1,5 +1,5 @@
 export interface TaskTable {
-   seq: number;
+   taskSeq: number;
    description: string;
-   name: string;
+   taskName: string;
 }
